@@ -1,0 +1,191 @@
+{
+  "m": {
+    "num": 1,
+    "den": 1,
+    "utf": "m",
+    "html": "m"
+  },
+
+  "dm": {
+    "num": 1,
+    "den": 10,
+    "utf": "dm",
+    "html": "html"
+  },
+
+  "cm": {
+    "num": 1,
+    "den": 100,
+    "utf": "cm",
+    "html": "cm"
+  },
+
+  "mm": {
+    "num": 1,
+    "den": 1000,
+    "utf": "mm",
+    "html": "mm"
+  },
+
+  "um": {
+    "num": 1,
+    "den": 1e6,
+    "utf": "μm",
+    "html": "&micro;m"
+  },
+
+  "nm": {
+    "num": 1,
+    "den": 1e9,
+    "utf": "nm",
+    "html": "nm"
+  },
+
+  "pm": {
+    "num": 1,
+    "den": 1e12,
+    "utf": "pm",
+    "html": "pm"
+  },
+
+
+  "fm": {
+    "num": 1,
+    "den": 1e15,
+    "utf": "fm",
+    "html": "fm"
+  },
+
+  "am": {
+    "num": 1,
+    "den": 1e18,
+    "utf": "am",
+    "html": "am"
+  },
+
+  "zm": {
+    "num": 1,
+    "den": 1e21,
+    "utf": "zm",
+    "html": "zm"
+  },
+
+  "ym": {
+    "num": 1,
+    "den": 1e24,
+    "utf": "ym",
+    "html": "ym"
+  },
+
+  "dam": {
+    "num": 10,
+    "den": 1,
+    "utf": "dam",
+    "html": "dam"
+  },
+
+  "hm": {
+    "num": 100,
+    "den": 1,
+    "utf": "hm",
+    "html": "hm"
+  },
+
+  "km": {
+    "num": 1000,
+    "den": 1,
+    "utf": "km",
+    "html": "km"
+  },
+
+  "Mm": {
+    "num": 1e6,
+    "den": 1,
+    "utf": "Mm",
+    "html": "Mm"
+  },
+
+  "Gm": {
+    "num": 1e9,
+    "den": 1,
+    "utf": "Gm",
+    "html": "Gm"
+  },
+
+  "Tm": {
+    "num": 1e12,
+    "den": 1,
+    "utf": "Tm",
+    "html": "Tm"
+  },
+
+  "Pm": {
+    "num": 1e15,
+    "den": 1,
+    "utf": "Pm",
+    "html": "Pm"
+  },
+
+  "Em": {
+    "num": 1e18,
+    "den": 1,
+    "utf": "Em",
+    "html": "Em"
+  },
+
+  "Zm": {
+    "num": 1e21,
+    "den": 1,
+    "utf": "Zm",
+    "html": "Zm"
+  },
+
+  "Ym": {
+    "num": 1e24,
+    "den": 1,
+    "utf": "Ym",
+    "html": "Ym"
+  },
+
+  "ft": {
+    "num": 3048,
+    "den": 10000,
+    "utf": "'",
+    "html": "&quot;"
+  },
+
+  "in": {
+    "num": 254,
+    "den": 10000,
+    "utf": "\"",
+    "html": "&dquot;"
+  },
+
+  "th": {
+    "num": 254,
+    "den": 1e7,
+    "utf": "th",
+    "html": "th"
+  },
+
+  "yd": {
+    "num": 9144,
+    "den": 10000,
+    "utf": "yd",
+    "html": "yd"
+  },
+
+  "mi": {
+    "num": 1609344,
+    "den": 1000,
+    "utf": "mi",
+    "html": "mi"
+  },
+
+  "nmi": {
+    "num": 1852,
+    "den": 1,
+    "utf": "nmi",
+    "html": "nmi"
+  }
+}
