@@ -3,7 +3,7 @@ const Length = require('../lib/length');
 
 describe('Length', () => {
   it('should take a length in metres and convert to other SI', () => {
-    const h = new Length(123, 'm');
+    const h = new Length(123, 'm', false);
 
     assert.equal(h.ym, 123000000000000000000000000, 'yoctometres');
     assert.equal(h.zm, 123000000000000000000000, 'zeptometres');
@@ -55,5 +55,43 @@ describe('Length', () => {
   it('should convert feet to metres', () => {
     const h = new Length(35827, 'ft');
     assert.equal(h.m.toFixed(0), '10920', 'Challenger Deep in metres');
+  });
+
+  it('should correctly add lengths in differing units (metric)', () => {
+    const h1 = new Length(23, 'm');
+    const h2 = new Length(450, 'cm');
+    
+    const resm = h1.$add(h2);
+    assert.equal(resm.unit, 'm');
+    assert.equal(resm.m, 27.5);
+
+    const rescm = h2.$add(h1);
+    assert.equal(rescm.unit, 'cm');
+    assert.equal(rescm.cm, 2750);
+
+    const resmm1 = h1.$add(h2, 'mm');
+    const resmm2 = h2.$add(h1, 'mm');
+    assert.deepEqual(resmm1, resmm2);
+    assert.equal(resmm1.unit, 'mm');
+    assert.equal(resmm2.mm, 27500);
+  });
+
+  it('should correctly add lengths in differing units (imperial)', () => {
+    const h1 = new Length(34, 'yd');
+    const h2 = new Length(456, 'ft');
+
+    const resyd = h1.$add(h2);
+    assert.equal(resyd.unit, 'yd');
+    assert.equal(resyd.yd, 186);
+
+    const resft = h2.$add(h1);
+    assert.equal(resft.unit, 'ft');
+    assert.equal(resft.ft, 558);
+
+    const resmm1 = h1.$add(h2, 'in');
+    const resmm2 = h2.$add(h1, 'in');
+    assert.deepEqual(resmm1, resmm2);
+    assert.equal(resmm1.unit, 'in');
+    assert.equal(resmm2.in, 6696);
   });
 });

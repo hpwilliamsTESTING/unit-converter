@@ -1,5 +1,5 @@
 const assert = require('assert');
-const Unit = require('../lib/unit');
+const { Unit, safeDivMul } = require('../lib/unit');
 
 describe('Unit', () => {
 
@@ -103,7 +103,11 @@ describe('Unit', () => {
       }
     };
     TestUnit.addUnits(testFactors);
-    TestUnit.addSIPrefixes('p');
+    const addedUnits = TestUnit.addSIPrefixes('p');
+    assert.deepEqual(
+      addedUnits,
+      new Set(['yp', 'zp', 'ap', 'fp', 'pp', 'np', 'up', 'mp', 'cp', 'dp', 'dap', 'hp', 'kp', 'Mp', 'Gp', 'Tp', 'Pp', 'Ep', 'Zp', 'Yp'])
+    );
     assert.deepEqual(TestUnit.getFactor('yp'), { num: 2n, den: 3n * 10n ** 24n}, 'yocto-');
     assert.equal(TestUnit.getFactor('yq'), undefined);
     assert.deepEqual(TestUnit.getFactor('zp'), { num: 2n, den: 3n * 10n ** 21n}, 'zepto-');

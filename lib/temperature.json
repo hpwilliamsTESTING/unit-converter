@@ -1,0 +1,29 @@
+{
+  "K": {
+    "num": 1,
+    "den": 1,
+    "offset": 0,
+    "offsetd": 1
+  },
+ 
+  "degC": {
+    "num": 1,
+    "den": 1,
+    "offset": 27315,
+    "offsetd": 100
+  },
+
+  "degF": {
+    "num": 5,
+    "den": 9,
+    "offset": 45967,
+    "offsetd": 100
+  },
+
+  "degRa": {
+    "num": 5,
+    "den": 9,
+    "offset": 0,
+    "offsetd": 1
+  }
+}

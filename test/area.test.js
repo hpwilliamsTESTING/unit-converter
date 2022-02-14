@@ -3,9 +3,9 @@ const Area = require('../lib/area');
 
 describe('Area', () => {
   it('should take an area in square metres and convert to other SI (midrange)', () => {
-    const h = new Area(123, 'sqm');
+    const h = new Area(123, 'sqm', false);
 
-    // prefices smaller than atto too small for accurate JS numbers
+    // prefices smaller than atto too small for accurate JS numbers even with strict off
     assert.equal(h.sqam, 123e36, 'square attometres');
     assert.equal(h.sqfm, 123e30, 'square femtometres');
     assert.equal(h.sqpm, 123e24, 'square picometres');
@@ -23,11 +23,11 @@ describe('Area', () => {
     assert.equal(h.sqTm, 123e-24, 'square terametres');
     assert.equal(h.sqPm, 123e-30, 'square petametres');
     assert.equal(h.sqEm, 123e-36, 'square exametres');
-    // prefices greater than exa too big for accurate JS numbers
+    // prefices greater than exa too big for accurate JS numbers even with strict off
   });
 
   it('should take an area in barns and convert to SI units', () => {
-    const h = new Area(4, 'barn');
+    const h = new Area(4, 'barn', false);
 
     assert.equal(h.sqym, 4e20, 'square yottametres');
     assert.equal(h.sqzm, 4e14, 'square zettometres');
@@ -37,17 +37,17 @@ describe('Area', () => {
   });
 
   it('should take an area in hectares and convert to SI units', () => {
-    const h = new Area(500000, 'ha');
+    const h = new Area(500000, 'ha', false);
 
     assert.equal(h.ha, 500000, 'hectares');
     assert.equal(h.sqkm, 5000, 'square kilometres');
     assert.equal(h.sqMm, 5e-3, 'square megametres');
     assert.equal(h.sqGm, 5e-9, 'square gigametres');
     assert.equal(h.sqTm, 5e-15, 'square terametres');
-    assert.equal(h.sqPm, 5e-21, 'square petametres');
-    assert.equal(h.sqEm, 5e-27, 'square exametres');
-    assert.equal(h.sqZm, 5e-33, 'square zettametres');
-    assert.equal(h.sqYm, 5e-39, 'square yottametres');
+    assert.equal(h.sqPm.toExponential(3), '5.000e-21', 'square petametres');
+    assert.equal(h.sqEm.toExponential(3), '5.000e-27', 'square exametres');
+    assert.equal(h.sqZm.toExponential(3), '5.000e-33', 'square zettametres');
+    assert.equal(h.sqYm.toExponential(3), '5.000e-39', 'square yottametres');
   });
 
 });
