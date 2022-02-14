@@ -62,17 +62,17 @@ describe('Length', () => {
     const h2 = new Length(450, 'cm');
     
     const resm = h1.$add(h2);
-    assert.equal(resm.unit, 'm');
+    assert.equal(resm.$unit, 'm');
     assert.equal(resm.m, 27.5);
 
     const rescm = h2.$add(h1);
-    assert.equal(rescm.unit, 'cm');
+    assert.equal(rescm.$unit, 'cm');
     assert.equal(rescm.cm, 2750);
 
     const resmm1 = h1.$add(h2, 'mm');
     const resmm2 = h2.$add(h1, 'mm');
     assert.deepEqual(resmm1, resmm2);
-    assert.equal(resmm1.unit, 'mm');
+    assert.equal(resmm1.$unit, 'mm');
     assert.equal(resmm2.mm, 27500);
   });
 
@@ -81,17 +81,17 @@ describe('Length', () => {
     const h2 = new Length(456, 'ft');
 
     const resyd = h1.$add(h2);
-    assert.equal(resyd.unit, 'yd');
+    assert.equal(resyd.$unit, 'yd');
     assert.equal(resyd.yd, 186);
 
     const resft = h2.$add(h1);
-    assert.equal(resft.unit, 'ft');
+    assert.equal(resft.$unit, 'ft');
     assert.equal(resft.ft, 558);
 
     const resmm1 = h1.$add(h2, 'in');
     const resmm2 = h2.$add(h1, 'in');
     assert.deepEqual(resmm1, resmm2);
-    assert.equal(resmm1.unit, 'in');
+    assert.equal(resmm1.$unit, 'in');
     assert.equal(resmm2.in, 6696);
   });
 });
