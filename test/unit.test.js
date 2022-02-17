@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { Unit, safeDivMul } = require('../lib/unit');
+const Unit = require('../lib/unit');
 
 describe('Unit', () => {
 

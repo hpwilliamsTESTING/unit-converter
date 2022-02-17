@@ -9,6 +9,7 @@
   },
   "sideEffects": false,
   "scripts": {
+    "init": "eslint --init",
     "style": "eslint lib/*.js ",
     "test": "mocha -r esm test/*.test.js",
     "validate": "npm run style && npm run test"
