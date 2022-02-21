@@ -2,6 +2,14 @@ const assert = require('assert');
 const Area = require('../lib/area');
 
 describe('Area', () => {
+
+  it('should create a default area of 0sqm', () => {
+    const h = new Area();
+
+    assert.equal(h.$unit, 'sqm', 'default unit square metres');
+    assert.equal(h.sqm, 0, 'default value 0sqm');
+  });
+
   it('should take an area in square metres and convert to other SI (midrange)', () => {
     const h = new Area(123, 'sqm', false);
 

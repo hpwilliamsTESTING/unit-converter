@@ -2,6 +2,13 @@ const assert = require('assert');
 const Temperature = require('../lib/temperature');
 
 describe('Temperature', () => {
+
+  it('should create a default temperature at 0K', () => {
+    const h = new Temperature();
+    assert.equal(h.$unit, 'K', 'defauly unit Kelvin');
+    assert.equal(h.K, 0, 'default value 0K');
+  });
+
   it('should take a temperature in Kelvin and convert', () => {
     const h = new Temperature(100, 'K');
 

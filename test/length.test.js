@@ -2,6 +2,14 @@ const assert = require('assert');
 const Length = require('../lib/length');
 
 describe('Length', () => {
+
+  it('should create a default length of 0m', () => {
+    const h = new Length();
+
+    assert.equal(h.$unit, 'm', 'default unit metres');
+    assert.equal(h.m, 0, 'default valu e0m');
+  });
+
   it('should take a length in metres and convert to other SI', () => {
     const h = new Length(123, 'm', false);
 

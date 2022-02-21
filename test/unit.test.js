@@ -9,7 +9,7 @@ describe('Unit', () => {
     TestUnit = function(value, unit, strict) {
       Unit.call(this, TestUnit, value, unit, strict);
     }
-    Object.assign(TestUnit, Unit);
+    Unit.extend(TestUnit);
   });
 
   afterEach(() => {
@@ -43,6 +43,13 @@ describe('Unit', () => {
     assert.equal(TestUnit.factors.p.den, 7n);
   });
 
+  it('should turn into a readable string', () => {
+    TestUnit.init();
+    TestUnit.addUnit('p', { num: 1, den: 1 });
+    const t = new TestUnit(234, 'p');
+    assert.equal(`${t}`, '234p');
+  });
+
   it('should allow multiple factors to be added and converted between', () => {
     TestUnit.init();
     const testFactors = {
@@ -62,6 +69,30 @@ describe('Unit', () => {
     const t2 = new TestUnit(1, 'q');
     assert.equal(t2.p, 0.01);
     assert.equal(t2.q, 1);
+  });
+
+  it('should allow multiple factors to be added and set', () => {
+    TestUnit.init();
+    const testFactors = {
+      p: {
+        num: 100,
+        den: 1
+      },
+      q: {
+        num: 1,
+        den: 100
+      }
+    };
+    TestUnit.addUnits(testFactors);
+    const t = new TestUnit(0, 'q');
+    assert.equal(t.p, 0);
+    assert.equal(t.q, 0);
+    t.p = 2;
+    assert.equal(t.p, 2);
+    assert.equal(t.q, 20000);
+    t.q = 3;
+    assert.equal(t.p, 0.0003);
+    assert.equal(t.q, 3);
   });
 
   it('should correctly return current factors squared', () => {

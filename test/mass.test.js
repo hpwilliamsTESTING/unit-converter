@@ -2,6 +2,14 @@ const assert = require('assert');
 const Mass = require('../lib/mass');
 
 describe('Mass', () => {
+
+  it('should create a default mass of 0kg', () => {
+    const h = new Mass();
+
+    assert.equal(h.$unit, 'kg', 'default unit kilogrammes');
+    assert.equal(h.kg, 0, 'default value 0kg');
+  });
+
   it('should take a mass in kilogrammes and convert to other SI', () => {
     const h = new Mass(0.123, 'kg', false);
 

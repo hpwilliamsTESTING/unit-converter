@@ -1,7 +1,15 @@
 const assert = require('assert');
 const Volume = require('../lib/volume');
 
-describe('Volume', ()=> {
+describe('Volume', () => {
+
+  it('should create a defaultv olume of 0cbm', () => {
+    const h = new Volume();
+
+    assert.equal(h.$unit, 'cbm', 'default unit cubic metres');
+    assert.equal(h.cbm, 0, 'defauly value 0cbm');
+  });
+
   it('should take a volume in cubic metres and convert to other SI (midrange)', () => {
     const h = new Volume(123, 'cbm', false);
 

@@ -12,12 +12,16 @@
     "init": "eslint --init",
     "style": "eslint lib/*.js ",
     "test": "mocha -r esm test/*.test.js",
-    "validate": "npm run style && npm run test"
+    "coverage": "nyc npm run test",
+    "validate": "npm run style && npm run coverage"
   },
   "devDependencies": {
-    "mocha": "^5.2.0",
     "eslint": "^7.16.0",
     "eslint-plugin-import": "^2.22.1",
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "nyc": "^15.1.0"
   }
 }
