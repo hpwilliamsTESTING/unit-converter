@@ -26,6 +26,7 @@ describe('Volume', () => {
     assert.equal(h.cbmm, 123e9, 'cubic millimetres');
     assert.equal(h.ul, 123e9, 'microlitres');
     assert.equal(h.cbcm, 123000000, 'cubic centimetres');
+    assert.equal(h.cc, 123000000, 'cubic centrimetres (cc abbreviation)');
     assert.equal(h.ml, 123000000, 'millilitres');
     assert.equal(h.cl, 12300000, 'centilitres');
     assert.equal(h.dl, 1230000, 'decilitres');

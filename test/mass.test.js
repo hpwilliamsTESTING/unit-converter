@@ -28,6 +28,7 @@ describe('Mass', () => {
     assert.equal(h.hg, 1.23, 'hectogrammes');
     assert.equal(h.kg, 0.123, 'kilogrammes');
     assert.equal(h.Mg, 0.000123, 'megagrammes');
+    assert.equal(h.mett, 0.000123, 'metric tonnes (gigagrammes)');
     assert.equal(h.Gg, 0.000000123, 'gigagrammes');
     assert.equal(h.Tg, 0.000000000123, 'teragrammes');
     assert.equal(h.Pg, 0.000000000000123, 'petagrammes');
